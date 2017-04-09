@@ -19,4 +19,10 @@ $app->get('/', function () use ($app) {
 $app->group(['namespace' => 'api', 'prefix' => 'api/v1'], function ($app)
 {
 	$app->get('marking', 'EmployeesMarkingController@createMarkingList');
+	$app->get('employees', 'EmployeesController@listEmployee');
+	$app->get('employee/{id}', 'EmployeesController@getEmployee');
+	$app->post('employee', 'EmployeesController@createEmployee');
+	$app->put('employee/in/{id}', 'EmployeesController@updateEmployeeMarkingIn');
+	$app->put('employee/out/{id}', 'EmployeesController@updateEmployeeMarkingOut');
+	$app->delete('employee/{id}', 'EmployeesController@deleteEmployee');
 });

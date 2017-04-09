@@ -10,7 +10,7 @@ use App\EmployeesMarking;
 
 class EmployeesMarkingController extends Controller
 {
-	public function createMarkingList(Request $request){
+	public function createMarkingList(){
         try {
         	$result = array("code" => 200, "state" => true, "data" => "The marking list was already created");
         	$current_date = new \DateTime();
